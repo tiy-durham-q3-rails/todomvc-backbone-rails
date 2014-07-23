@@ -18,7 +18,7 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
 
     if @todo.save
-      render :json => todo_json(@json), :status => :created
+      render :json => todo_json(@todo), :status => :created
     else
       # return some status
     end
@@ -26,7 +26,7 @@ class TodosController < ApplicationController
 
   def update
     if @todo.update(todo_params)
-      render :json => todo_json(@json)
+      render :json => todo_json(@todo)
     else
       # return some status
     end
